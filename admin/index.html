@@ -17,7 +17,7 @@
     }
 
     .admin-layout {
-      display: flex;
+      display: none; /* Hidden until authenticated */
       min-height: 100vh;
     }
 
@@ -112,6 +112,45 @@
       color: var(--gray-light);
     }
   </style>
+
+  <!-- Supabase SDK & Auth Guard (Must be in head for security) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/config.js"></script>
+  <script>
+    (async function() {
+      const cfg = window.APP_CONFIG || {};
+      const SUPA_URL = cfg.supabaseUrl || localStorage.getItem('SUPABASE_URL');
+      const SUPA_KEY = cfg.supabaseAnonKey || localStorage.getItem('SUPABASE_ANON_KEY');
+
+      // If no keys, allow access ONLY to settings so they can configure it
+      if (!SUPA_URL || SUPA_URL === 'YOUR_SUPABASE_URL_HERE' || !SUPA_KEY || SUPA_KEY === 'YOUR_SUPABASE_ANON_KEY_HERE') {
+        document.addEventListener('DOMContentLoaded', () => {
+           const layout = document.querySelector('.admin-layout');
+           if (layout) layout.style.display = 'flex';
+           showSection('settings'); 
+        });
+        return;
+      }
+
+      const _sb = window.supabase.createClient(SUPA_URL, SUPA_KEY);
+      window.supabaseClient = _sb;
+
+      const { data: { session } } = await _sb.auth.getSession();
+      if (!session) {
+        window.location.replace('login.html');
+      } else {
+        // Authenticated! Show the layout
+        document.addEventListener('DOMContentLoaded', () => {
+          const layout = document.querySelector('.admin-layout');
+          if (layout) layout.style.display = 'flex';
+          const emailEl = document.getElementById('adminEmailDisplay');
+          if (emailEl && session.user?.email) {
+            emailEl.textContent = session.user.email.split('@')[0];
+          }
+        });
+      }
+    })();
+  </script>
 </head>
 
 <body>
@@ -676,40 +715,6 @@
   </div>
 
   <div class="toast-container"></div>
-  <!-- Supabase SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="../js/config.js"></script>
-
-  <!-- *** AUTH GUARD — runs before everything else *** -->
-  <script>
-    (async function() {
-      const cfg = window.APP_CONFIG || {};
-      const SUPA_URL = cfg.supabaseUrl || localStorage.getItem('SUPABASE_URL');
-      const SUPA_KEY = cfg.supabaseAnonKey || localStorage.getItem('SUPABASE_ANON_KEY');
-
-      if (!SUPA_URL || SUPA_URL === 'YOUR_SUPABASE_URL_HERE' || !SUPA_KEY || SUPA_KEY === 'YOUR_SUPABASE_ANON_KEY_HERE') {
-        // No Supabase configured yet — allow access so admin can configure
-        return;
-      }
-
-      const _sb = window.supabase.createClient(SUPA_URL, SUPA_KEY);
-      window.supabaseClient = _sb; // set globally early
-
-      const { data: { session } } = await _sb.auth.getSession();
-      if (!session) {
-        // Not logged in — redirect to login page
-        window.location.replace('login.html');
-        return;
-      }
-
-      // Show logged-in user email in top bar
-      const emailEl = document.getElementById('adminEmailDisplay');
-      if (emailEl && session.user?.email) {
-        const shortEmail = session.user.email.split('@')[0];
-        emailEl.textContent = shortEmail;
-      }
-    })();
-  </script>
 
   <script src="../js/main.js"></script>
   <script src="../js/ai-widget.js"></script>
