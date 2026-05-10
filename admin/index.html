@@ -17,7 +17,8 @@
     }
 
     .admin-layout {
-      display: none; /* Hidden until authenticated */
+      display: none;
+      /* Hidden until authenticated */
       min-height: 100vh;
     }
 
@@ -117,7 +118,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../js/config.js"></script>
   <script>
-    (async function() {
+    (async function () {
       const cfg = window.APP_CONFIG || {};
       const SUPA_URL = cfg.supabaseUrl || localStorage.getItem('SUPABASE_URL');
       const SUPA_KEY = cfg.supabaseAnonKey || localStorage.getItem('SUPABASE_ANON_KEY');
@@ -125,9 +126,9 @@
       // If no keys, allow access ONLY to settings so they can configure it
       if (!SUPA_URL || SUPA_URL === 'YOUR_SUPABASE_URL_HERE' || !SUPA_KEY || SUPA_KEY === 'YOUR_SUPABASE_ANON_KEY_HERE') {
         document.addEventListener('DOMContentLoaded', () => {
-           const layout = document.querySelector('.admin-layout');
-           if (layout) layout.style.display = 'flex';
-           showSection('settings'); 
+          const layout = document.querySelector('.admin-layout');
+          if (layout) layout.style.display = 'flex';
+          showSection('settings');
         });
         return;
       }
@@ -136,7 +137,7 @@
       window.supabaseClient = _sb;
 
       const { data: { session } } = await _sb.auth.getSession();
-      
+
       if (!session) {
         // Not logged in -> Go to login
         // We use a relative-to-root path to avoid 404s
@@ -157,7 +158,9 @@
   </script>
   <style>
     /* Prevents white flash before Auth Guard kicks in */
-    html { background: #000; }
+    html {
+      background: #000;
+    }
   </style>
 </head>
 
@@ -309,14 +312,16 @@
             <div style="display:flex;flex-direction:column;gap:12px">
               <div>
                 <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:5px">
-                  <span>BBQ</span><span style="color:var(--gold)">38%</span></div>
+                  <span>BBQ</span><span style="color:var(--gold)">38%</span>
+                </div>
                 <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:3px">
                   <div style="height:100%;width:38%;background:var(--gold);border-radius:3px"></div>
                 </div>
               </div>
               <div>
                 <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:5px">
-                  <span>Pakistani</span><span style="color:var(--gold)">28%</span></div>
+                  <span>Pakistani</span><span style="color:var(--gold)">28%</span>
+                </div>
                 <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:3px">
                   <div style="height:100%;width:28%;background:var(--red-light);border-radius:3px"></div>
                 </div>
@@ -330,14 +335,16 @@
               </div>
               <div>
                 <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:5px">
-                  <span>Italian</span><span style="color:var(--gold)">10%</span></div>
+                  <span>Italian</span><span style="color:var(--gold)">10%</span>
+                </div>
                 <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:3px">
                   <div style="height:100%;width:10%;background:#2ecc71;border-radius:3px"></div>
                 </div>
               </div>
               <div>
                 <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:5px">
-                  <span>Other</span><span style="color:var(--gold)">6%</span></div>
+                  <span>Other</span><span style="color:var(--gold)">6%</span>
+                </div>
                 <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:3px">
                   <div style="height:100%;width:6%;background:#9b59b6;border-radius:3px"></div>
                 </div>
@@ -511,13 +518,13 @@
                 <th>Actions</th>
               </tr>
             </thead>
-                <td>Tomorrow</td>
-                <td>1:00 PM</td>
-                <td>8</td>
-                <td>Business Lunch</td>
-                <td><span class="status-pill status-confirmed">Confirmed</span></td>
-                <td><button class="btn btn-sm btn-ghost">Details</button></td>
-              </tr>
+            <td>Tomorrow</td>
+            <td>1:00 PM</td>
+            <td>8</td>
+            <td>Business Lunch</td>
+            <td><span class="status-pill status-confirmed">Confirmed</span></td>
+            <td><button class="btn btn-sm btn-ghost">Details</button></td>
+            </tr>
             </tbody>
           </table>
         </div>
@@ -525,7 +532,8 @@
 
       <!-- ════ MENU MANAGEMENT ════ -->
       <div class="admin-content" id="sec-menu" style="display:none">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;gap:20px;flex-wrap:wrap">
+        <div
+          style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;gap:20px;flex-wrap:wrap">
           <h4>Menu Management</h4>
           <div style="display:flex;gap:12px;flex:1;justify-content:flex-end">
             <input type="text" id="adminMenuSearch" placeholder="Search menu..." oninput="filterAdminMenu()"
@@ -601,13 +609,15 @@
         <div style="max-width:600px;display:flex;flex-direction:column;gap:20px">
           <div class="chart-wrap">
             <h5 style="margin-bottom:16px;font-size:0.9rem;color:var(--gold)">🔑 Secure Configuration</h5>
-            <div id="configStatus" style="padding:16px;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.2);border-radius:12px;margin-bottom:20px">
+            <div id="configStatus"
+              style="padding:16px;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.2);border-radius:12px;margin-bottom:20px">
               <div style="display:flex;align-items:center;gap:10px;color:#2ecc71;font-weight:600;font-size:0.85rem">
                 <i class="fas fa-shield-alt"></i> Developer Config (config.js) is Active
               </div>
-              <p style="font-size:0.75rem;color:var(--gray);margin-top:8px">API keys are securely managed in the developer configuration file and are hidden from the UI for security.</p>
+              <p style="font-size:0.75rem;color:var(--gray);margin-top:8px">API keys are securely managed in the
+                developer configuration file and are hidden from the UI for security.</p>
             </div>
-            
+
             <div id="manualConfigFields" style="display:none">
               <div class="form-group">
                 <label class="form-label">Supabase URL</label>
@@ -687,7 +697,8 @@
         </div>
         <div class="chart-wrap" style="margin-top:24px">
           <h5 style="margin-bottom:16px;color:var(--gold)">📊 Revenue Analytics</h5>
-          <div style="height:200px;display:flex;align-items:center;justify-content:center;border:1px dashed var(--glass-border);border-radius:12px;color:var(--gray)">
+          <div
+            style="height:200px;display:flex;align-items:center;justify-content:center;border:1px dashed var(--glass-border);border-radius:12px;color:var(--gray)">
             Revenue chart goes here (Connect Analytics)
           </div>
         </div>
@@ -701,20 +712,24 @@
             <h5 style="margin-bottom:16px;color:var(--gold)">🤖 AI Insights</h5>
             <div class="insight-card">
               <h5>📈 Peak Revenue Opportunity</h5>
-              <p>Friday 7–9pm drives 34% of weekly revenue. Consider expanding seating capacity or offering a premium prix fixe menu.</p>
+              <p>Friday 7–9pm drives 34% of weekly revenue. Consider expanding seating capacity or offering a premium
+                prix fixe menu.</p>
             </div>
             <div class="insight-card">
               <h5>🍽️ Underperforming Item</h5>
-              <p>"Honey Garlic Prawns" has low reorders despite high first-time orders. Consider a pricing adjustment or portion increase.</p>
+              <p>"Honey Garlic Prawns" has low reorders despite high first-time orders. Consider a pricing adjustment or
+                portion increase.</p>
             </div>
             <div class="insight-card">
               <h5>💡 Recommendation</h5>
-              <p>Customers who order BBQ Platter also frequently order Mango Lassi. Bundle offer could increase avg order by Rs.180.</p>
+              <p>Customers who order BBQ Platter also frequently order Mango Lassi. Bundle offer could increase avg
+                order by Rs.180.</p>
             </div>
           </div>
           <div class="chart-wrap">
             <h5 style="margin-bottom:16px;color:var(--gold)">📍 Customer Heatmap</h5>
-            <div id="heatmapMap" style="background:var(--black-mid);border-radius:12px;height:260px;width:100%;z-index:1"></div>
+            <div id="heatmapMap"
+              style="background:var(--black-mid);border-radius:12px;height:260px;width:100%;z-index:1"></div>
           </div>
         </div>
       </div>
@@ -767,7 +782,7 @@
       if (heatmapInitialized) return;
       setTimeout(() => {
         const map = L.map('heatmapMap').setView([33.712, 73.033], 13); // Islamabad F-8
-        
+
         // MapTiler Dark Theme base map
         L.tileLayer('https://api.maptiler.com/maps/streets-v2-dark/{z}/{x}/{y}.png?key=qLGPrgzkaoAd4NCyXuak', {
           attribution: '&copy; <a href="https://www.maptiler.com/">MapTiler</a>'
@@ -775,15 +790,15 @@
 
         // Generate some realistic dummy heatmap data for F-7, F-8, E-7
         const heatPoints = [];
-        for(let i=0; i<150; i++) {
+        for (let i = 0; i < 150; i++) {
           // F-7 area
-          heatPoints.push([33.722 + (Math.random()-0.5)*0.02, 73.056 + (Math.random()-0.5)*0.02, Math.random() * 0.8 + 0.2]);
+          heatPoints.push([33.722 + (Math.random() - 0.5) * 0.02, 73.056 + (Math.random() - 0.5) * 0.02, Math.random() * 0.8 + 0.2]);
           // F-8 area
-          heatPoints.push([33.712 + (Math.random()-0.5)*0.02, 73.033 + (Math.random()-0.5)*0.02, Math.random() * 0.9 + 0.1]);
+          heatPoints.push([33.712 + (Math.random() - 0.5) * 0.02, 73.033 + (Math.random() - 0.5) * 0.02, Math.random() * 0.9 + 0.1]);
           // E-7 area
-          heatPoints.push([33.720 + (Math.random()-0.5)*0.015, 73.030 + (Math.random()-0.5)*0.015, Math.random() * 0.6 + 0.2]);
+          heatPoints.push([33.720 + (Math.random() - 0.5) * 0.015, 73.030 + (Math.random() - 0.5) * 0.015, Math.random() * 0.6 + 0.2]);
         }
-        
+
         L.heatLayer(heatPoints, {
           radius: 20,
           blur: 15,
@@ -800,11 +815,11 @@
       try {
         const { data: oData } = await window.supabaseClient.from('orders').select('total');
         const { count: cCount } = await window.supabaseClient.from('customers').select('*', { count: 'exact', head: true });
-        
+
         const totalOrders = oData ? oData.length : 0;
         const totalRevenue = oData ? oData.reduce((sum, o) => sum + (o.total || 0), 0) : 0;
         const activeCustomers = cCount || 0;
-        
+
         function animateValue(id, target) {
           const el = document.getElementById(id);
           if (!el) return;
@@ -819,7 +834,7 @@
             el.textContent = Math.floor(cur).toLocaleString();
           }, 16);
         }
-        
+
         animateValue('stat-orders', totalOrders);
         animateValue('stat-revenue', totalRevenue);
         animateValue('stat-guests', activeCustomers);
@@ -915,7 +930,7 @@
       const grid = document.getElementById('adminMenuGrid');
       if (!grid) return;
       grid.innerHTML = '';
-      
+
       // Sort by name by default
       const sortedItems = [...items].sort((a, b) => a.name.localeCompare(b.name));
 
@@ -964,20 +979,20 @@
       const newPrice = parseInt(prompt("Edit Price:", item.price));
       if (isNaN(newPrice)) return;
       const newDesc = prompt("Edit Description:", item.description);
-      
+
       try {
         const { error } = await window.supabaseClient
           .from('menu_items')
           .update({ name: newName, price: newPrice, description: newDesc })
           .eq('id', id);
-        
+
         if (error) throw error;
-        
+
         // Update local cache
         item.name = newName;
         item.price = newPrice;
         item.description = newDesc;
-        
+
         renderAdminMenu();
         showToast('Item updated successfully!', 'success');
       } catch (e) {
@@ -986,8 +1001,8 @@
     }
 
     async function deleteMenuItem(id) {
-      if(!window.supabaseClient) return;
-      if(confirm('Are you sure you want to delete this item? This cannot be undone.')) {
+      if (!window.supabaseClient) return;
+      if (confirm('Are you sure you want to delete this item? This cannot be undone.')) {
         try {
           const { error } = await window.supabaseClient.from('menu_items').delete().eq('id', id);
           if (error) throw error;
@@ -1003,15 +1018,15 @@
     async function addMenuItem() {
       if (!window.supabaseClient) return showToast('Configure Supabase in Settings first', 'error');
       const name = prompt("Item Name:");
-      if(!name) return;
+      if (!name) return;
       const category = prompt("Category:\nstarters / bbq / pakistani / chinese / italian / fastfood / desserts / drinks");
-      if(!category) return;
+      if (!category) return;
       const priceStr = prompt("Price (in Rs., numbers only):");
-      if(!priceStr) return;
+      if (!priceStr) return;
       const price = parseInt(priceStr);
       const img = prompt("Image URL (paste a link, or press OK for default):") || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80";
       const description = prompt("Short Description:") || '';
-      
+
       const newItem = {
         id: 'i_' + Date.now().toString(36),
         name, category, price, img, description,
@@ -1025,7 +1040,7 @@
           .select()
           .single();
         if (error) throw error;
-        
+
         // Add the newly saved item directly into local cache and re-render
         window.menuData = window.menuData || [];
         window.menuData.push(data || newItem);
@@ -1052,7 +1067,7 @@
             <td>${r.time}</td>
             <td>${r.guests}</td>
             <td>None</td>
-            <td><span class="status-pill ${r.status==='Confirmed'?'status-confirmed':'status-pending'}">${r.status}</span></td>
+            <td><span class="status-pill ${r.status === 'Confirmed' ? 'status-confirmed' : 'status-pending'}">${r.status}</span></td>
             <td>
               <select style="background:var(--black-card);color:white;border:1px solid var(--glass-border);padding:4px;border-radius:4px;" onchange="updateReservationStatus('${r.id}', this.value)">
                 <option value="" disabled selected>Status</option>
@@ -1062,7 +1077,7 @@
             </td>
           </tr>
         `).join('');
-      } catch (e) {}
+      } catch (e) { }
     }
 
     async function updateReservationStatus(id, status) {
@@ -1086,20 +1101,20 @@
             <td>${c.discount_pct}%</td>
             <td>${c.uses} / ${c.max_uses}</td>
             <td>${c.expires}</td>
-            <td><span class="status-pill ${c.status==='Active'?'status-confirmed':'status-cancelled'}">${c.status}</span></td>
+            <td><span class="status-pill ${c.status === 'Active' ? 'status-confirmed' : 'status-cancelled'}">${c.status}</span></td>
             <td><button class="btn btn-sm btn-ghost" onclick="showToast('Edit coupon coming soon', 'info')">Edit</button></td>
           </tr>
         `).join('');
-      } catch (e) {}
+      } catch (e) { }
     }
 
     async function addCoupon() {
       if (!window.supabaseClient) return showToast('Configure Supabase first', 'error');
       const code = prompt("Enter Coupon Code (e.g. SUMMER20):");
-      if(!code) return;
+      if (!code) return;
       const discount_pct = parseInt(prompt("Discount Percentage (e.g. 20):"));
       const max_uses = parseInt(prompt("Max Uses (e.g. 100):"));
-      
+
       const newCoupon = {
         id: 'cp_' + Date.now().toString(36),
         code: code.toUpperCase(),
@@ -1130,21 +1145,21 @@
       const gKey = document.getElementById('groqKeyInput').value.trim();
       const sUrl = document.getElementById('supabaseUrlInput').value.trim();
       const sKey = document.getElementById('supabaseKeyInput').value.trim();
-      
+
       if (gKey) {
         localStorage.setItem('GROQ_API_KEY', gKey);
-        if(window.AI_CONFIG) window.AI_CONFIG.apiKey = gKey;
+        if (window.AI_CONFIG) window.AI_CONFIG.apiKey = gKey;
       }
-      
+
       let reloadNeeded = false;
       if (sUrl && sKey) {
         localStorage.setItem('SUPABASE_URL', sUrl);
         localStorage.setItem('SUPABASE_ANON_KEY', sKey);
         reloadNeeded = true;
       }
-      
+
       showToast('Configuration saved successfully!', 'success');
-      
+
       if (reloadNeeded) {
         setTimeout(() => window.location.reload(), 1000);
       }
@@ -1184,7 +1199,7 @@ Provide specific, actionable insights and advice. Keep responses professional an
         const cfg = window.APP_CONFIG || {};
         const key = document.getElementById('groqKeyInput')?.value || cfg.groqApiKey || localStorage.getItem('GROQ_API_KEY');
         if (!key || key === 'YOUR_GROQ_API_KEY_HERE') throw new Error('Missing key');
-        
+
         const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${key}` },
@@ -1192,7 +1207,7 @@ Provide specific, actionable insights and advice. Keep responses professional an
         });
         const data = await res.json();
         const reply = data.choices?.[0]?.message?.content || 'Could not get response. Check your Groq API key in Settings.';
-        
+
         let html = reply.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
@@ -1201,7 +1216,7 @@ Provide specific, actionable insights and advice. Keep responses professional an
         html = html.replace(/\n\n/g, '<br><br>');
         html = html.replace(/\n/g, '<br>');
         html = html.replace(/<\/li><br>/g, '</li>');
-        
+
         thinkDiv.innerHTML = html;
       } catch (e) {
         thinkDiv.innerHTML = '⚠️ <strong>API key needed.</strong> Go to Settings and enter your Groq API key.';

@@ -1,0 +1,11 @@
+{
+  "name": "hanan-fusion",
+  "version": "1.0.0",
+  "description": "Premium restaurant management platform",
+  "scripts": {
+    "build": "node build-config.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
