@@ -125,11 +125,16 @@
 
       // If no keys, allow access ONLY to settings so they can configure it
       if (!SUPA_URL || SUPA_URL === 'YOUR_SUPABASE_URL_HERE' || !SUPA_KEY || SUPA_KEY === 'YOUR_SUPABASE_ANON_KEY_HERE') {
-        document.addEventListener('DOMContentLoaded', () => {
+        function showSettings() {
           const layout = document.querySelector('.admin-layout');
           if (layout) layout.style.display = 'flex';
           showSection('settings');
-        });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', showSettings);
+        } else {
+          showSettings();
+        }
         return;
       }
 
@@ -141,18 +146,24 @@
       if (!session) {
         // Not logged in -> Go to login
         // We use a relative-to-root path to avoid 404s
-        const path = window.location.pathname.includes('/admin/') ? 'login.html' : 'admin/login.html';
-        window.location.replace(path);
+        window.location.replace("/admin/login");
       } else {
         // Authenticated! Show the layout
-        document.addEventListener('DOMContentLoaded', () => {
+        // DOMContentLoaded may have already fired by the time async getSession() resolves,
+        // so we check readyState and show immediately if DOM is ready, otherwise wait.
+        function showLayout() {
           const layout = document.querySelector('.admin-layout');
           if (layout) layout.style.display = 'flex';
           const emailEl = document.getElementById('adminEmailDisplay');
           if (emailEl && session.user?.email) {
             emailEl.textContent = session.user.email.split('@')[0];
           }
-        });
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', showLayout);
+        } else {
+          showLayout();
+        }
       }
     })();
   </script>
@@ -206,9 +217,8 @@
           <div class="admin-nav-title">Settings</div>
           <div class="admin-nav-link" onclick="showSection('settings')"><span class="icon"><i
                 class="fas fa-cog"></i></span> Settings</div>
-          <div class="admin-nav-link"><a href="../index.html"
-              style="color:inherit;display:flex;align-items:center;gap:12px"><span class="icon"><i
-                  class="fas fa-external-link-alt"></i></span> View Website</a></div>
+          <div class="admin-nav-link"><a href="/" style="color:inherit;display:flex;align-items:center;gap:12px"><span
+                class="icon"><i class="fas fa-external-link-alt"></i></span> View Website</a></div>
           <div class="admin-nav-link" onclick="adminLogout()" style="color:#e74c3c;cursor:pointer">
             <span class="icon"><i class="fas fa-sign-out-alt"></i></span> Logout
           </div>
@@ -1138,7 +1148,7 @@
       if (window.supabaseClient) {
         await window.supabaseClient.auth.signOut();
       }
-      window.location.href = 'login.html';
+      window.location.href = '/admin/login';
     }
 
     function saveSettings() {
