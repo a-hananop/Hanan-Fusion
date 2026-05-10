@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Order Online — Hanan Fusion</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="cursor-dot"></div><div class="cursor-circle"></div>
+<nav class="navbar scrolled"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><span class="nav-logo-name">Hanan Fusion</span><span class="nav-logo-tag">Fine Dining & Beyond</span></a>
+  <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="reservation.html">Reserve</a><a href="gallery.html">Gallery</a><a href="order.html" class="active">Order Online</a><a href="contact.html">Contact</a></div>
+  <div class="nav-actions"><button class="mode-toggle">☀️</button><button class="nav-cart-btn"><i class="fas fa-shopping-basket"></i><span class="cart-count">0</span></button><button class="nav-hamburger"><span></span><span></span><span></span></button></div>
+</div></nav>
+<div class="mobile-nav"><button class="mobile-nav-close">✕</button><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="reservation.html">Reserve</a><a href="order.html">Order</a><a href="contact.html">Contact</a></div>
+
+<div style="margin-top:var(--nav-h)"></div>
+
+<section class="section" id="checkoutSection">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:44px">
+      <div class="section-label" style="justify-content:center">Online Ordering</div>
+      <h2 class="section-title">Complete Your <span>Order</span></h2>
+    </div>
+
+    <!-- Steps -->
+    <div class="checkout-steps" style="max-width:500px;margin:0 auto 48px">
+      <div class="step active"><div class="step-num">1</div><div class="step-label">Cart</div></div>
+      <div class="step active"><div class="step-num">2</div><div class="step-label">Details</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-label">Payment</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-label">Confirmed</div></div>
+    </div>
+
+    <div class="checkout-grid">
+      <!-- Left: Form -->
+      <div>
+        <!-- Empty cart notice -->
+        <div id="emptyCartNotice" style="text-align:center;padding:60px 20px;display:none">
+          <div style="font-size:4rem;margin-bottom:16px">🛒</div>
+          <h3 style="margin-bottom:12px">Your cart is empty!</h3>
+          <p style="margin-bottom:24px">Add some items from our menu to place an order.</p>
+          <a href="menu.html" class="btn btn-gold">Browse Menu</a>
+        </div>
+
+        <form id="checkoutForm">
+          <div style="background:var(--black-card);border:1px solid var(--glass-border);border-radius:var(--radius-xl);padding:36px;margin-bottom:24px">
+            <h4 style="margin-bottom:24px;display:flex;align-items:center;gap:10px"><i class="fas fa-user" style="color:var(--gold)"></i> Delivery Details</h4>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">Full Name</label><input type="text" class="form-input" placeholder="Ahmad Khan" required></div>
+              <div class="form-group"><label class="form-label">Phone</label><input type="tel" class="form-input" placeholder="+92 300 1234567" required></div>
+            </div>
+            <div class="form-group"><label class="form-label">Delivery Address</label><input type="text" class="form-input" placeholder="House No., Street, Area, Islamabad" required></div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">City</label><select class="form-select"><option>Islamabad</option><option>Rawalpindi</option></select></div>
+              <div class="form-group"><label class="form-label">Delivery Time</label><select class="form-select"><option>ASAP (30-45 min)</option><option>Schedule Later</option></select></div>
+            </div>
+            <div class="form-group"><label class="form-label">Order Notes</label><textarea class="form-textarea" style="min-height:80px" placeholder="Extra spicy, no onions, ring the bell..."></textarea></div>
+          </div>
+
+          <div style="background:var(--black-card);border:1px solid var(--glass-border);border-radius:var(--radius-xl);padding:36px;margin-bottom:24px">
+            <h4 style="margin-bottom:24px;display:flex;align-items:center;gap:10px"><i class="fas fa-credit-card" style="color:var(--gold)"></i> Payment Method</h4>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+              <label style="display:flex;align-items:center;gap:12px;padding:16px;border-radius:12px;background:rgba(212,175,55,0.08);border:2px solid var(--gold);cursor:pointer">
+                <input type="radio" name="payment" value="cod" checked style="accent-color:var(--gold)">
+                <div><div style="font-weight:600;font-size:0.9rem">💵 Cash on Delivery</div><div style="font-size:0.75rem;color:var(--gray)">Pay when delivered</div></div>
+              </label>
+              <label style="display:flex;align-items:center;gap:12px;padding:16px;border-radius:12px;background:var(--black-mid);border:1px solid var(--glass-border);cursor:pointer">
+                <input type="radio" name="payment" value="card" style="accent-color:var(--gold)">
+                <div><div style="font-weight:600;font-size:0.9rem">💳 Card / JazzCash</div><div style="font-size:0.75rem;color:var(--gray)">Secure online payment</div></div>
+              </label>
+            </div>
+            <!-- Promo Code -->
+            <div class="form-group" style="margin-bottom:0">
+              <label class="form-label">Promo Code</label>
+              <div class="promo-input-wrap">
+                <input type="text" class="promo-input" id="promoCode" placeholder="Enter code (try HANA20)">
+                <button type="button" class="btn btn-outline btn-sm" onclick="applyPromo()">Apply</button>
+              </div>
+              <div id="promoResult" style="margin-top:8px"></div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-lg" style="width:100%">
+            <i class="fas fa-check-circle"></i> Place Order
+          </button>
+        </form>
+      </div>
+
+      <!-- Right: Order Summary -->
+      <div>
+        <div class="order-summary">
+          <h4 style="margin-bottom:20px;display:flex;align-items:center;gap:10px"><i class="fas fa-receipt" style="color:var(--gold)"></i> Order Summary</h4>
+          <div id="orderSummaryItems">
+            <div style="text-align:center;padding:30px;color:var(--gray)">
+              <p>No items yet.<br><a href="menu.html" style="color:var(--gold)">Browse Menu →</a></p>
+            </div>
+          </div>
+          <div id="cartTotals" style="margin-top:16px"></div>
+          <div style="margin-top:20px;padding:14px;background:rgba(46,204,113,0.08);border:1px solid rgba(46,204,113,0.2);border-radius:10px;font-size:0.8rem;color:#2ecc71">
+            🚚 Free delivery on orders above Rs.1,500
+          </div>
+        </div>
+
+        <!-- Order Tracking Preview -->
+        <div style="background:var(--black-card);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:24px;margin-top:20px">
+          <h5 style="margin-bottom:16px;font-size:0.9rem">📍 Live Order Tracking</h5>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:12px;opacity:0.5">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.2);display:flex;align-items:center;justify-content:center;font-size:0.7rem">1</div>
+              <span style="font-size:0.82rem">Order Placed</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;opacity:0.5">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.2);display:flex;align-items:center;justify-content:center;font-size:0.7rem">2</div>
+              <span style="font-size:0.82rem">Preparing in Kitchen</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;opacity:0.5">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.2);display:flex;align-items:center;justify-content:center;font-size:0.7rem">3</div>
+              <span style="font-size:0.82rem">Out for Delivery</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;opacity:0.5">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.2);display:flex;align-items:center;justify-content:center;font-size:0.7rem">4</div>
+              <span style="font-size:0.82rem">Delivered 🎉</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Success State -->
+<div id="orderSuccess" style="display:none;text-align:center;padding:100px 20px;max-width:600px;margin:0 auto">
+  <div class="success-icon" style="margin:0 auto 24px">✓</div>
+  <h2 style="margin-bottom:12px;font-size:2.5rem">Order Placed! 🎉</h2>
+  <p style="margin-bottom:8px">Your order reference: <strong style="color:var(--gold)" id="orderNum">#HF-XXXXXX</strong></p>
+  <p style="margin-bottom:32px">Estimated delivery time: <strong style="color:var(--gold)">35–45 minutes</strong></p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="index.html" class="btn btn-gold">Back to Home</a>
+    <a href="menu.html" class="btn btn-outline">Order Again</a>
+  </div>
+</div>
+
+<div id="cartOverlay" class="cart-overlay"></div>
+<div id="cartSidebar" class="cart-sidebar">
+  <div class="cart-header"><h3>🛒 Cart</h3><button class="cart-close">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer"><div id="cartTotalsSide"></div></div>
+</div>
+<a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<footer style="background:var(--black-soft);border-top:1px solid var(--glass-border);padding:30px 0"><div class="container" style="text-align:center"><p style="color:var(--gray);font-size:0.82rem">© 2024 <span style="color:var(--gold)">Hanan Fusion</span>.</p></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/main.js"></script><script src="js/ai-widget.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (Cart.items.length === 0) {
+    document.getElementById('emptyCartNotice').style.display = 'block';
+  }
+  renderOrderSummary();
+  Cart.renderTotals();
+});
+</script>
+</body>
+</html>

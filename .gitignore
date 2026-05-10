@@ -1,0 +1,25 @@
+# Database files - NEVER commit these
+*.sqlite
+*.sqlite3
+*.db
+
+# Developer config with API keys - NEVER commit
+js/config.js
+
+# Node backend (removed - using Supabase now)
+server.js
+node_modules/
+package.json
+package-lock.json
+
+# Environment secrets
+.env
+.env.local
+.env.production
+
+# SQL schema files
+*.sql
+
+# OS files
+.DS_Store
+Thumbs.db

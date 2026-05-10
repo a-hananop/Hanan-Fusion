@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hanan Fusion — Premium restaurant in Islamabad serving Pakistani, Chinese, Italian & BBQ cuisine. Reserve a table or order online.">
+  <meta name="keywords" content="Hanan Fusion, restaurant Islamabad, Pakistani food, Chinese food, BBQ, fine dining, Islamabad restaurant">
+  <meta property="og:title" content="Hanan Fusion — Taste the Extraordinary">
+  <meta property="og:description" content="Premium fusion dining experience in Islamabad.">
+  <meta property="og:type" content="restaurant">
+  <meta name="theme-color" content="#D4AF37">
+  <title>Hanan Fusion — Taste the Extraordinary</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Restaurant","name":"Hanan Fusion","servesCuisine":["Pakistani","Chinese","Italian","BBQ"],"address":{"@type":"PostalAddress","streetAddress":"Main Boulevard, F-7 Markaz","addressLocality":"Islamabad","addressCountry":"PK"},"telephone":"+92511234567","openingHours":["Mo-Th 12:00-23:00","Fr-Sa 12:00-24:00","Su 13:00-22:00"]}
+  </script>
+</head>
+<body>
+
+<!-- Reading Progress -->
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- Cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-circle"></div>
+
+<!-- Offer Banner -->
+<div class="offer-banner">
+  🏷️ <strong>Today's Special:</strong> 20% off all weekday lunch orders (12–4pm) — Use code <strong>HANA20</strong> &nbsp;|&nbsp; <a href="menu.html">Order Now →</a>
+  <span class="offer-close">✕</span>
+</div>
+
+<!-- ═══════════════════════════════════════════ NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">Hanan Fusion</span>
+      <span class="nav-logo-tag">Fine Dining & Beyond</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservation.html">Reserve</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="order.html">Order Online</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="mode-toggle" title="Toggle theme">☀️</button>
+      <button class="nav-cart-btn" title="Cart">
+        <i class="fas fa-shopping-basket"></i>
+        <span class="cart-count">0</span>
+      </button>
+      <a href="reservation.html" class="btn btn-gold btn-sm">Reserve Table</a>
+      <button class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="reservation.html">Reserve</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="order.html">Order Online</a>
+  <a href="contact.html">Contact</a>
+  <div style="margin-top:32px;display:flex;gap:12px">
+    <a href="tel:+925112345670" class="btn btn-outline">📞 Call Us</a>
+    <a href="reservation.html" class="btn btn-gold">Reserve</a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-particles"></div>
+  <div class="hero-content container">
+    <div class="hero-label">
+      <i class="fas fa-star"></i> Award-Winning Restaurant · Islamabad
+    </div>
+    <h1 class="hero-title">
+      Where Every Bite<br>
+      <span class="italic">Tells a Story</span>
+    </h1>
+    <p class="hero-subtitle">
+      A culinary journey through Pakistan, China & Italy — crafted with passion, served with elegance.
+    </p>
+    <div class="hero-btns">
+      <a href="reservation.html" class="btn btn-gold btn-lg">
+        <i class="fas fa-calendar-check"></i> Reserve a Table
+      </a>
+      <a href="menu.html" class="btn btn-outline btn-lg">
+        <i class="fas fa-utensils"></i> View Menu
+      </a>
+      <a href="order.html" class="btn btn-ghost btn-lg">
+        <i class="fas fa-shopping-bag"></i> Order Online
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-value" data-count="12">0</div>
+        <div class="hero-stat-label">Years of Excellence</div>
+      </div>
+      <div>
+        <div class="hero-stat-value" data-count="48">0</div>
+        <div class="hero-stat-label">Signature Dishes</div>
+      </div>
+      <div>
+        <div class="hero-stat-value" data-count="25000">0</div>
+        <div class="hero-stat-label">Happy Guests</div>
+      </div>
+      <div>
+        <div class="hero-stat-value" data-count="8">0</div>
+        <div class="hero-stat-label">Awards Won</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FEATURED DISHES -->
+<section class="section" id="featured">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Our Specialties</div>
+      <h2 class="section-title">Featured <span>Dishes</span></h2>
+      <p class="section-subtitle">Handpicked by our head chef — the flavors that keep our guests coming back.</p>
+    </div>
+    <div class="dishes-carousel reveal reveal-delay-1">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Dish 1 -->
+        <div class="dish-card">
+          <div class="dish-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Desi BBQ Platter" loading="lazy">
+            <div class="dish-img-overlay"></div>
+            <span class="dish-tag badge badge-gold">🔥 Best Seller</span>
+          </div>
+          <div class="dish-body">
+            <h3 class="dish-name">Desi BBQ Platter</h3>
+            <p class="dish-desc">Mixed grill platter featuring seekh kebab, tikka, lamb chops & boti with house sauces.</p>
+            <div class="dish-footer">
+              <div class="dish-price">Rs.1,850</div>
+              <button class="dish-add-btn" onclick="Cart.add({id:'b1',name:'Desi BBQ Platter',price:1850,img:'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80'})">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Dish 2 -->
+        <div class="dish-card">
+          <div class="dish-img-wrap">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&q=80" alt="Hanan Special Biryani" loading="lazy">
+            <div class="dish-img-overlay"></div>
+            <span class="dish-tag badge badge-red">⭐ Signature</span>
+          </div>
+          <div class="dish-body">
+            <h3 class="dish-name">Hanan Special Biryani</h3>
+            <p class="dish-desc">Fragrant basmati rice cooked with tender meat, whole spices & saffron. A timeless classic.</p>
+            <div class="dish-footer">
+              <div class="dish-price">Rs.750</div>
+              <button class="dish-add-btn" onclick="Cart.add({id:'p1',name:'Hanan Special Biryani',price:750,img:'https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&q=80'})">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Dish 3 -->
+        <div class="dish-card">
+          <div class="dish-img-wrap">
+            <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&q=80" alt="Truffle Risotto" loading="lazy">
+            <div class="dish-img-overlay"></div>
+            <span class="dish-tag badge badge-green">👨‍🍳 Chef's Pick</span>
+          </div>
+          <div class="dish-body">
+            <h3 class="dish-name">Truffle Mushroom Risotto</h3>
+            <p class="dish-desc">Creamy arborio rice with wild mushrooms, black truffle & aged Parmesan cheese.</p>
+            <div class="dish-footer">
+              <div class="dish-price">Rs.1,100</div>
+              <button class="dish-add-btn" onclick="Cart.add({id:'i1',name:'Truffle Mushroom Risotto',price:1100,img:'https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&q=80'})">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Dish 4 -->
+        <div class="dish-card">
+          <div class="dish-img-wrap">
+            <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&q=80" alt="Karahi Gosht" loading="lazy">
+            <div class="dish-img-overlay"></div>
+            <span class="dish-tag badge badge-red">🌶️ Spicy</span>
+          </div>
+          <div class="dish-body">
+            <h3 class="dish-name">Karahi Gosht</h3>
+            <p class="dish-desc">Slow-cooked tender mutton in a rich spiced tomato and ginger gravy. Pure Desi soul.</p>
+            <div class="dish-footer">
+              <div class="dish-price">Rs.950</div>
+              <button class="dish-add-btn" onclick="Cart.add({id:'p2',name:'Karahi Gosht',price:950,img:'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&q=80'})">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Dish 5 -->
+        <div class="dish-card">
+          <div class="dish-img-wrap">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Fusion Smash Burger" loading="lazy">
+            <div class="dish-img-overlay"></div>
+            <span class="dish-tag badge badge-gold">🍔 Popular</span>
+          </div>
+          <div class="dish-body">
+            <h3 class="dish-name">Fusion Smash Burger</h3>
+            <p class="dish-desc">Double smashed beef patty with desi spiced secret sauce, caramelized onions & aged cheddar.</p>
+            <div class="dish-footer">
+              <div class="dish-price">Rs.650</div>
+              <button class="dish-add-btn" onclick="Cart.add({id:'f1',name:'Fusion Smash Burger',price:650,img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80'})">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Dish 6 -->
+        <div class="dish-card">
+          <div class="dish-img-wrap">
+            <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80" alt="Tiramisu" loading="lazy">
+            <div class="dish-img-overlay"></div>
+            <span class="dish-tag badge badge-green">🍰 Dessert</span>
+          </div>
+          <div class="dish-body">
+            <h3 class="dish-name">Classic Tiramisu</h3>
+            <p class="dish-desc">Authentic Italian dessert with espresso-soaked ladyfingers and mascarpone cream.</p>
+            <div class="dish-footer">
+              <div class="dish-price">Rs.480</div>
+              <button class="dish-add-btn" onclick="Cart.add({id:'d2',name:'Classic Tiramisu',price:480,img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80'})">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-nav reveal reveal-delay-2">
+      <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+      <div class="carousel-dots">
+        <div class="carousel-dot active"></div>
+        <div class="carousel-dot"></div>
+        <div class="carousel-dot"></div>
+        <div class="carousel-dot"></div>
+      </div>
+      <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="text-center" style="margin-top:40px">
+      <a href="menu.html" class="btn btn-outline">View Full Menu <i class="fas fa-arrow-right" style="margin-left:8px"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ CHEF SPECIAL -->
+<section class="section chef-special">
+  <div class="container">
+    <div class="chef-grid">
+      <div class="chef-img-wrap reveal">
+        <div class="chef-accent"></div>
+        <div class="chef-img-frame">
+          <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80" alt="Executive Chef" loading="lazy">
+        </div>
+        <div class="chef-img-badge">
+          <div class="num">15+</div>
+          <div class="label">Years Mastery</div>
+        </div>
+      </div>
+      <div class="chef-content reveal reveal-delay-2">
+        <div class="section-label">Meet The Artist</div>
+        <h2 class="section-title">Chef <span>Ahmad Raza</span></h2>
+        <p>With over 15 years of culinary mastery across Pakistan, Dubai, and Italy, Chef Ahmad brings a unique perspective to every plate — blending the bold spices of the subcontinent with refined European technique.</p>
+        <p style="margin-top:14px">His philosophy: <em style="color:var(--gold)">"Every dish must tell a story that lingers long after the last bite."</em></p>
+        <div class="chef-features">
+          <div class="chef-feature">
+            <div class="chef-feature-icon"><i class="fas fa-award"></i></div>
+            <div>
+              <div class="chef-feature-title">Michelin Trained</div>
+              <div class="chef-feature-desc">Apprenticed under 3-star chefs in Milan</div>
+            </div>
+          </div>
+          <div class="chef-feature">
+            <div class="chef-feature-icon"><i class="fas fa-globe"></i></div>
+            <div>
+              <div class="chef-feature-title">World Cuisine</div>
+              <div class="chef-feature-desc">Expert in 6 international cuisines</div>
+            </div>
+          </div>
+          <div class="chef-feature">
+            <div class="chef-feature-icon"><i class="fas fa-fire"></i></div>
+            <div>
+              <div class="chef-feature-title">Live BBQ</div>
+              <div class="chef-feature-desc">Traditional coal-fire grilling mastery</div>
+            </div>
+          </div>
+          <div class="chef-feature">
+            <div class="chef-feature-icon"><i class="fas fa-leaf"></i></div>
+            <div>
+              <div class="chef-feature-title">Farm to Table</div>
+              <div class="chef-feature-desc">Locally sourced, seasonal ingredients</div>
+            </div>
+          </div>
+        </div>
+        <div class="chef-signature">Ahmad Raza</div>
+        <a href="about.html" class="btn btn-gold" style="margin-top:28px">Meet Our Full Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ DAILY OFFERS -->
+<section class="section" style="background:var(--black-soft)">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Limited Time</div>
+      <h2 class="section-title">Daily <span>Offers</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px">
+      <div class="glass-card reveal reveal-delay-1" style="padding:36px;text-align:center">
+        <div style="font-size:3rem;margin-bottom:16px">🌅</div>
+        <h3 style="margin-bottom:8px;color:var(--gold)">Weekday Lunch Deal</h3>
+        <p style="margin-bottom:20px">Mon–Thu 12pm–4pm<br>20% off entire bill</p>
+        <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--gold);font-weight:800">20% OFF</div>
+        <a href="order.html" class="btn btn-gold btn-sm" style="margin-top:20px">Claim Now</a>
+      </div>
+      <div class="glass-card reveal reveal-delay-2" style="padding:36px;text-align:center;border-color:var(--gold)">
+        <div style="font-size:3rem;margin-bottom:16px">👨‍👩‍👧‍👦</div>
+        <h3 style="margin-bottom:8px;color:var(--gold)">Tuesday Family Deal</h3>
+        <p style="margin-bottom:20px">4 Mains + 2 Desserts<br>Every Tuesday</p>
+        <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--gold);font-weight:800">Rs.3,500</div>
+        <a href="reservation.html" class="btn btn-gold btn-sm" style="margin-top:20px">Book Now</a>
+      </div>
+      <div class="glass-card reveal reveal-delay-3" style="padding:36px;text-align:center">
+        <div style="font-size:3rem;margin-bottom:16px">🛵</div>
+        <h3 style="margin-bottom:8px;color:var(--gold)">Free Delivery</h3>
+        <p style="margin-bottom:20px">On all orders<br>above Rs.1,500</p>
+        <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--gold);font-weight:800">FREE</div>
+        <a href="order.html" class="btn btn-gold btn-sm" style="margin-top:20px">Order Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Guest Reviews</div>
+      <h2 class="section-title">What Our <span>Guests Say</span></h2>
+      <p class="section-subtitle">Real words from real food lovers who experienced the Hanan difference.</p>
+    </div>
+    <div class="testimonials-grid" style="margin-top:50px">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"The Desi BBQ Platter was absolutely extraordinary. The coal-fire aroma, the tenderness of the meat — I've never experienced anything like it in Islamabad. This is my new favorite restaurant."</p>
+        <div class="t-author">
+          <img class="t-avatar" src="https://i.pravatar.cc/100?img=11" alt="Ahmed K">
+          <div><div class="t-name">Ahmed Khan</div><div class="t-title">Food Blogger, Islamabad</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Brought my entire family for my mother's birthday. Chef Ahmad personally came to our table. The Biryani was perfection itself. The ambiance is luxurious yet welcoming. 10/10!"</p>
+        <div class="t-author">
+          <img class="t-avatar" src="https://i.pravatar.cc/100?img=5" alt="Sarah M">
+          <div><div class="t-name">Sarah Malik</div><div class="t-title">Regular Guest</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"The Truffle Risotto rivals anything I've had in Italy. The fusion concept actually works here — each dish respects its origin while creating something uniquely Hanan. Absolutely brilliant."</p>
+        <div class="t-author">
+          <img class="t-avatar" src="https://i.pravatar.cc/100?img=33" alt="Omar A">
+          <div><div class="t-name">Omar Aziz</div><div class="t-title">Culinary Enthusiast</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ GALLERY PREVIEW -->
+<section class="section" style="background:var(--black-soft);padding-bottom:60px">
+  <div class="container-wide">
+    <div class="text-center reveal" style="margin-bottom:40px">
+      <div class="section-label">Visual Journey</div>
+      <h2 class="section-title">A Feast for <span>the Eyes</span></h2>
+    </div>
+    <div class="gallery-grid reveal reveal-delay-1">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Restaurant interior" loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-icon"><i class="fas fa-expand"></i></div></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="BBQ Platter" loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-icon"><i class="fas fa-expand"></i></div></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&q=80" alt="Risotto" loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-icon"><i class="fas fa-expand"></i></div></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80" alt="Restaurant bar" loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-icon"><i class="fas fa-expand"></i></div></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&q=80" alt="Biryani" loading="lazy">
+        <div class="gallery-overlay"><div class="gallery-icon"><i class="fas fa-expand"></i></div></div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:40px">
+      <a href="gallery.html" class="btn btn-outline">View Full Gallery <i class="fas fa-images" style="margin-left:8px"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ TIMING -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Visit Us</div>
+      <h2 class="section-title">Opening <span>Hours</span></h2>
+    </div>
+    <div class="timing-grid reveal reveal-delay-1" style="margin-top:48px">
+      <div class="timing-card">
+        <div class="timing-day">Monday – Thursday</div>
+        <div class="timing-hours">12:00 PM – 11:00 PM</div>
+        <div class="timing-status">● Open Today</div>
+      </div>
+      <div class="timing-card" style="border-color:var(--gold)">
+        <div class="timing-day">Friday – Saturday</div>
+        <div class="timing-hours">12:00 PM – 12:00 AM</div>
+        <div class="timing-status">● Extended Hours</div>
+      </div>
+      <div class="timing-card">
+        <div class="timing-day">Sunday</div>
+        <div class="timing-hours">1:00 PM – 10:00 PM</div>
+        <div class="timing-status">● Family Day</div>
+      </div>
+    </div>
+    <!-- Map -->
+    <div style="margin-top:60px;border-radius:20px;overflow:hidden;height:380px;border:1px solid var(--glass-border)" class="reveal reveal-delay-2">
+      <div class="map-embed" style="width:100%;height:100%"></div>
+    </div>
+    <div class="text-center" style="margin-top:28px">
+      <p style="color:var(--gray)"><i class="fas fa-map-marker-alt" style="color:var(--gold);margin-right:8px"></i>Main Boulevard, F-7 Markaz, Islamabad &nbsp;|&nbsp; <i class="fas fa-phone" style="color:var(--gold);margin-right:8px"></i>+92 51 123 4567</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ LOYALTY -->
+<section class="section loyalty-section">
+  <div class="container">
+    <div class="loyalty-card reveal">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+        <div>
+          <div class="section-label" style="justify-content:flex-start"><span></span>Rewards Program</div>
+          <h2 class="section-title" style="margin-top:8px">Earn <span>Points</span>,<br>Unlock Rewards</h2>
+          <p style="margin-bottom:28px">Join our loyalty program and earn 1 point for every Rs.10 spent. Redeem for free meals, discounts, and exclusive chef experiences.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px">
+            <div style="text-align:center;padding:16px;background:rgba(212,175,55,0.08);border-radius:12px;border:1px solid rgba(212,175,55,0.2)">
+              <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--gold);font-weight:800">500</div>
+              <div style="font-size:0.72rem;color:var(--gray);margin-top:4px;letter-spacing:1px;text-transform:uppercase">Free Starter</div>
+            </div>
+            <div style="text-align:center;padding:16px;background:rgba(212,175,55,0.08);border-radius:12px;border:1px solid rgba(212,175,55,0.2)">
+              <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--gold);font-weight:800">1200</div>
+              <div style="font-size:0.72rem;color:var(--gray);margin-top:4px;letter-spacing:1px;text-transform:uppercase">Free Main</div>
+            </div>
+            <div style="text-align:center;padding:16px;background:rgba(212,175,55,0.08);border-radius:12px;border:1px solid rgba(212,175,55,0.2)">
+              <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--gold);font-weight:800">3000</div>
+              <div style="font-size:0.72rem;color:var(--gray);margin-top:4px;letter-spacing:1px;text-transform:uppercase">Chef's Table</div>
+            </div>
+          </div>
+          <a href="#" class="btn btn-gold btn-lg">Join Rewards Program</a>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-bottom:8px">Your Balance</div>
+          <div class="points-display">0</div>
+          <div style="font-size:0.8rem;color:var(--gray);margin-top:4px">POINTS</div>
+          <div style="margin-top:32px;padding:24px;background:rgba(212,175,55,0.06);border-radius:16px;border:1px solid rgba(212,175,55,0.15)">
+            <div style="font-size:0.8rem;color:var(--gray);margin-bottom:8px">Next Reward</div>
+            <div style="height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden">
+              <div style="height:100%;width:35%;background:linear-gradient(to right,var(--gold-dark),var(--gold));border-radius:3px"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--gray);margin-top:6px">
+              <span>0 pts</span><span>500 pts for Free Starter</span>
+            </div>
+          </div>
+          <a href="order.html" class="btn btn-outline" style="margin-top:24px">Start Earning</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ NEWSLETTER -->
+<section class="section-sm newsletter-section">
+  <div class="container">
+    <div class="newsletter-wrap reveal">
+      <div class="section-label" style="justify-content:center">Stay Connected</div>
+      <h2 class="section-title">Get Exclusive <span>Offers</span></h2>
+      <p>Subscribe for weekly specials, new menu launches, and members-only discounts.</p>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn-gold">Subscribe <i class="fas fa-paper-plane" style="margin-left:6px"></i></button>
+      </form>
+      <p style="font-size:0.75rem;color:var(--gray);margin-top:14px">No spam. Unsubscribe anytime. Privacy respected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="nav-logo-name">Hanan Fusion</span>
+          <span class="nav-logo-tag">Fine Dining & Beyond</span>
+        </div>
+        <p>Where East meets West on a plate. Delivering extraordinary culinary experiences in the heart of Islamabad since 2012.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer-social" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="footer-social" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/923001234567" class="footer-social" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="reservation.html">Reserve Table</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="order.html">Online Ordering</a></li>
+          <li><a href="#">Catering</a></li>
+          <li><a href="#">Private Events</a></li>
+          <li><a href="#">Chef's Table</a></li>
+          <li><a href="#">Gift Cards</a></li>
+          <li><a href="#">Loyalty Program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">📍 F-7 Markaz, Islamabad</a></li>
+          <li><a href="tel:+925112345670">📞 +92 51 123 4567</a></li>
+          <li><a href="mailto:hello@hananfusion.com">✉️ hello@hananfusion.com</a></li>
+          <li><a href="https://wa.me/923001234567">💬 WhatsApp Us</a></li>
+        </ul>
+        <div style="margin-top:20px">
+          <div style="font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:8px">Hours Today</div>
+          <div style="font-size:0.9rem;color:var(--gold);font-family:var(--font-display)">12:00 PM – 11:00 PM</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 <span class="gold-text">Hanan Fusion</span>. All rights reserved.</p>
+      <p style="font-size:0.78rem;color:var(--gray)">Privacy Policy · Terms of Service · Sitemap</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-close">✕</button>
+  <img src="" alt="Gallery image">
+</div>
+
+<!-- Cart Sidebar -->
+<div id="cartOverlay" class="cart-overlay"></div>
+<div id="cartSidebar" class="cart-sidebar">
+  <div class="cart-header">
+    <h3>🛒 Your Cart</h3>
+    <button class="cart-close">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"><div class="cart-empty"><div class="cart-empty-icon">🛒</div><h4>Cart is empty</h4><p>Add some items!</p></div></div>
+  <div class="cart-footer">
+    <div id="cartTotals"></div>
+    <a href="order.html" class="btn btn-gold cart-checkout-btn">Proceed to Checkout</a>
+  </div>
+</div>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/ai-widget.js"></script>
+</body>
+</html>

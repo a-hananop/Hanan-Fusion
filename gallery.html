@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Gallery — Hanan Fusion</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="reading-progress"></div><div class="cursor-dot"></div><div class="cursor-circle"></div>
+<nav class="navbar scrolled"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><span class="nav-logo-name">Hanan Fusion</span><span class="nav-logo-tag">Fine Dining & Beyond</span></a>
+  <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="reservation.html">Reserve</a><a href="gallery.html" class="active">Gallery</a><a href="order.html">Order Online</a><a href="contact.html">Contact</a></div>
+  <div class="nav-actions"><button class="mode-toggle">☀️</button><button class="nav-cart-btn"><i class="fas fa-shopping-basket"></i><span class="cart-count">0</span></button><a href="reservation.html" class="btn btn-gold btn-sm">Reserve</a><button class="nav-hamburger"><span></span><span></span><span></span></button></div>
+</div></nav>
+<div class="mobile-nav"><button class="mobile-nav-close">✕</button><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="reservation.html">Reserve</a><a href="gallery.html">Gallery</a><a href="order.html">Order</a><a href="contact.html">Contact</a></div>
+
+<div class="page-hero" style="margin-top:var(--nav-h);background-image:linear-gradient(rgba(15,15,15,0.6),rgba(15,15,15,0.6)),url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80');background-size:cover;background-position:center">
+  <div class="page-hero-content">
+    <div class="section-label" style="justify-content:center">Visual Journey</div>
+    <h1 class="section-title">Our <span>Gallery</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Gallery</span></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <!-- Filter Tabs -->
+    <div style="display:flex;gap:10px;justify-content:center;margin-bottom:48px;flex-wrap:wrap" class="reveal">
+      <button class="filter-btn active" data-gallery="all">All Photos</button>
+      <button class="filter-btn" data-gallery="food">Food</button>
+      <button class="filter-btn" data-gallery="interior">Interior</button>
+      <button class="filter-btn" data-gallery="kitchen">Kitchen</button>
+      <button class="filter-btn" data-gallery="events">Events</button>
+    </div>
+
+    <!-- Masonry Gallery -->
+    <div class="masonry-grid" id="masonryGrid">
+      <div class="masonry-item" data-cat="interior">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Restaurant interior" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+      <div class="masonry-item" data-cat="food">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="BBQ Platter" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+      <div class="masonry-item" data-cat="food">
+        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&q=80" alt="Biryani" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+      <div class="masonry-item" data-cat="kitchen">
+        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=80" alt="Chef cooking" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+      <div class="masonry-item" data-cat="food">
+        <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&q=80" alt="Risotto" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+      <div class="masonry-item" data-cat="interior">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80" alt="Restaurant bar" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+      <div class="masonry-item" data-cat="food">
+        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&q=80" alt="Karahi" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+      <div class="masonry-item" data-cat="events">
+        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80" alt="Private event" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+      <div class="masonry-item" data-cat="food">
+        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80" alt="Tiramisu" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+      <div class="masonry-item" data-cat="food">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Burger" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+      <div class="masonry-item" data-cat="interior">
+        <img src="https://images.unsplash.com/photo-1550966871-3ed3cbe818d3?w=600&q=80" alt="Dining area" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+      <div class="masonry-item" data-cat="kitchen">
+        <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=600&q=80" alt="Kitchen brigade" loading="lazy">
+        <div class="masonry-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.2rem"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram Feed Banner -->
+<section class="section-sm" style="background:var(--black-soft)">
+  <div class="container text-center">
+    <div class="section-label" style="justify-content:center">@hananfusion</div>
+    <h3 style="margin-bottom:8px">Follow Us on <span style="color:var(--gold)">Instagram</span></h3>
+    <p style="margin-bottom:24px">Tag your dishes with #HananFusion for a chance to be featured!</p>
+    <a href="https://instagram.com" target="_blank" class="btn btn-outline"><i class="fab fa-instagram" style="margin-right:8px"></i>Follow @hananfusion</a>
+  </div>
+</section>
+
+<div id="lightbox" class="lightbox"><button class="lightbox-close">✕</button><img src="" alt="Gallery"></div>
+<a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<footer style="background:var(--black-soft);border-top:1px solid var(--glass-border);padding:30px 0"><div class="container" style="text-align:center"><p style="color:var(--gray);font-size:0.82rem">© 2024 <span style="color:var(--gold)">Hanan Fusion</span>.</p></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script><script src="js/ai-widget.js"></script>
+<script>
+document.querySelectorAll('[data-gallery]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-gallery]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.gallery;
+    document.querySelectorAll('.masonry-item').forEach(item => {
+      item.style.display = (cat === 'all' || item.dataset.cat === cat) ? 'block' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

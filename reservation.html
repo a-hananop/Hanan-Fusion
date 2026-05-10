@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Reserve a table at Hanan Fusion Restaurant, Islamabad. Online booking available.">
+  <title>Reserve a Table — Hanan Fusion</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="reading-progress"></div>
+<div class="cursor-dot"></div><div class="cursor-circle"></div>
+
+<nav class="navbar scrolled"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><span class="nav-logo-name">Hanan Fusion</span><span class="nav-logo-tag">Fine Dining & Beyond</span></a>
+  <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="reservation.html" class="active">Reserve</a><a href="gallery.html">Gallery</a><a href="order.html">Order Online</a><a href="contact.html">Contact</a></div>
+  <div class="nav-actions"><button class="mode-toggle">☀️</button><button class="nav-cart-btn"><i class="fas fa-shopping-basket"></i><span class="cart-count">0</span></button><button class="nav-hamburger"><span></span><span></span><span></span></button></div>
+</div></nav>
+<div class="mobile-nav"><button class="mobile-nav-close">✕</button><a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a><a href="reservation.html">Reserve</a><a href="gallery.html">Gallery</a><a href="order.html">Order</a><a href="contact.html">Contact</a></div>
+
+<!-- Page Hero -->
+<div class="page-hero" style="margin-top:var(--nav-h);background-image:linear-gradient(rgba(15,15,15,0.7),rgba(15,15,15,0.7)),url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80');background-size:cover;background-position:center">
+  <div class="page-hero-content">
+    <div class="section-label" style="justify-content:center">Book Your Experience</div>
+    <h1 class="section-title">Reserve a <span>Table</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Reservation</span></div>
+  </div>
+</div>
+
+<!-- Reservation Section -->
+<section class="section">
+  <div class="container">
+    <div class="reservation-grid">
+
+      <!-- Form -->
+      <div>
+        <!-- Form -->
+        <div class="reservation-form reveal" id="reservationFormWrap">
+          <h3 style="margin-bottom:8px">Book Your Table</h3>
+          <p style="margin-bottom:28px;font-size:0.88rem">Fill in the details below and we'll confirm your reservation within 30 minutes.</p>
+
+          <form id="reservationForm">
+            <input type="hidden" id="selectedTime" name="time">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-input" placeholder="Ahmad" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-input" placeholder="Khan" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-input" placeholder="+92 300 1234567" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-input" placeholder="you@email.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Date</label>
+                <input type="date" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Number of Guests</label>
+                <select class="form-select" required>
+                  <option value="">Select guests</option>
+                  <option>1 guest</option><option>2 guests</option><option>3 guests</option>
+                  <option>4 guests</option><option>5 guests</option><option>6 guests</option>
+                  <option>7–10 guests</option><option>10+ guests (Private)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Select Time Slot</label>
+              <div class="time-slots">
+                <div class="time-slot" data-time="12:00">12:00 PM</div>
+                <div class="time-slot" data-time="12:30">12:30 PM</div>
+                <div class="time-slot" data-time="13:00">1:00 PM</div>
+                <div class="time-slot unavailable" data-time="13:30">1:30 PM</div>
+                <div class="time-slot" data-time="14:00">2:00 PM</div>
+                <div class="time-slot" data-time="14:30">2:30 PM</div>
+                <div class="time-slot" data-time="19:00">7:00 PM</div>
+                <div class="time-slot" data-time="19:30">7:30 PM</div>
+                <div class="time-slot unavailable" data-time="20:00">8:00 PM</div>
+                <div class="time-slot" data-time="20:30">8:30 PM</div>
+                <div class="time-slot" data-time="21:00">9:00 PM</div>
+                <div class="time-slot" data-time="21:30">9:30 PM</div>
+              </div>
+              <div style="display:flex;gap:16px;margin-top:10px;font-size:0.72rem;color:var(--gray)">
+                <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(212,175,55,0.15);border:1px solid rgba(212,175,55,0.3);display:inline-block"></span>Available</span>
+                <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(136,136,136,0.1);display:inline-block"></span>Unavailable</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Occasion (Optional)</label>
+              <select class="form-select">
+                <option value="">Select occasion</option>
+                <option>Birthday Celebration</option><option>Anniversary</option>
+                <option>Business Dinner</option><option>Family Gathering</option>
+                <option>Date Night</option><option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Special Requests</label>
+              <textarea class="form-textarea" placeholder="Dietary requirements, seating preferences, special decorations..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-lg" style="width:100%">
+              <i class="fas fa-calendar-check"></i> Confirm Reservation
+            </button>
+            <p style="text-align:center;font-size:0.75rem;color:var(--gray);margin-top:12px">You'll receive a confirmation via SMS & email within 30 minutes.</p>
+          </form>
+        </div>
+
+        <!-- Success State -->
+        <div class="booking-success reservation-form" id="bookingSuccess">
+          <div class="success-icon">✓</div>
+          <h2 style="margin-bottom:12px">Table Reserved!</h2>
+          <p style="margin-bottom:24px">Your reservation has been confirmed. We've sent details to your email and phone. We look forward to hosting you!</p>
+          <div style="background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);border-radius:12px;padding:20px;margin-bottom:28px;text-align:left">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:0.85rem">
+              <div><span style="color:var(--gray)">Booking Ref</span><br><strong style="color:var(--gold)">#HF-2024-0892</strong></div>
+              <div><span style="color:var(--gray)">Status</span><br><span style="color:#2ecc71">✅ Confirmed</span></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;justify-content:center">
+            <a href="menu.html" class="btn btn-gold">Browse Menu</a>
+            <a href="index.html" class="btn btn-outline">Go Home</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Cards -->
+      <div class="reservation-info">
+        <div class="res-info-card reveal reveal-delay-1">
+          <div class="res-info-icon"><i class="fas fa-clock"></i></div>
+          <div class="res-info-title">Opening Hours</div>
+          <div class="res-info-text">
+            <strong style="color:var(--white)">Mon–Thu:</strong> 12:00 PM – 11:00 PM<br>
+            <strong style="color:var(--white)">Fri–Sat:</strong> 12:00 PM – 12:00 AM<br>
+            <strong style="color:var(--white)">Sunday:</strong> 1:00 PM – 10:00 PM
+          </div>
+        </div>
+        <div class="res-info-card reveal reveal-delay-2">
+          <div class="res-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="res-info-title">Our Location</div>
+          <div class="res-info-text">Main Boulevard, F-7 Markaz<br>Islamabad, Pakistan<br><a href="https://maps.google.com" style="color:var(--gold);margin-top:8px;display:inline-block" target="_blank">Get Directions →</a></div>
+        </div>
+        <div class="res-info-card reveal reveal-delay-3">
+          <div class="res-info-icon"><i class="fas fa-phone"></i></div>
+          <div class="res-info-title">Contact Us</div>
+          <div class="res-info-text">
+            <a href="tel:+925112345670" style="color:var(--gold)">+92 51 123 4567</a><br>
+            <a href="https://wa.me/923001234567" style="color:var(--gold);margin-top:6px;display:inline-block"><i class="fab fa-whatsapp"></i> WhatsApp: +92 300 1234567</a>
+          </div>
+        </div>
+        <div class="res-info-card reveal reveal-delay-4" style="background:linear-gradient(135deg,rgba(212,175,55,0.08),rgba(192,57,43,0.05));border-color:rgba(212,175,55,0.25)">
+          <div class="res-info-icon">🎉</div>
+          <div class="res-info-title">Private Events</div>
+          <div class="res-info-text">Planning a private dinner, birthday, or corporate event? We offer fully customized private dining experiences for groups of 10–120 guests.<br><a href="contact.html" style="color:var(--gold);margin-top:8px;display:inline-block">Enquire Now →</a></div>
+        </div>
+        <div class="res-info-card reveal" style="background:var(--black-card)">
+          <div class="res-info-icon">📋</div>
+          <div class="res-info-title">Reservation Policy</div>
+          <div class="res-info-text" style="font-size:0.8rem">
+            • Reservations held for 15 minutes past booking time<br>
+            • Cancellations: please call 2 hours in advance<br>
+            • Groups of 8+ require a deposit<br>
+            • Dress code: Smart casual
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<footer style="background:var(--black-soft);border-top:1px solid var(--glass-border);padding:30px 0"><div class="container" style="text-align:center"><p style="color:var(--gray);font-size:0.82rem">© 2024 <span style="color:var(--gold)">Hanan Fusion</span>. All rights reserved.</p></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/main.js"></script>
+<script src="js/ai-widget.js"></script>
+</body>
+</html>

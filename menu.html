@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hanan Fusion Menu — Pakistani, Chinese, Italian, BBQ, Fast Food, Desserts & Drinks. Order online or reserve a table.">
+  <title>Menu — Hanan Fusion</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="reading-progress"></div>
+<div class="cursor-dot"></div><div class="cursor-circle"></div>
+
+<!-- Offer Banner -->
+<div class="offer-banner">🏷️ <strong>HANA20</strong> — 20% off your first online order! <a href="order.html">Order Now →</a><span class="offer-close">✕</span></div>
+
+<!-- Navbar -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="nav-logo-name">Hanan Fusion</span><span class="nav-logo-tag">Fine Dining & Beyond</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html" class="active">Menu</a>
+      <a href="reservation.html">Reserve</a><a href="gallery.html">Gallery</a><a href="order.html">Order Online</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="mode-toggle">☀️</button>
+      <button class="nav-cart-btn"><i class="fas fa-shopping-basket"></i><span class="cart-count">0</span></button>
+      <a href="reservation.html" class="btn btn-gold btn-sm">Reserve Table</a>
+      <button class="nav-hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav"><button class="mobile-nav-close">✕</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="menu.html">Menu</a>
+  <a href="reservation.html">Reserve</a><a href="gallery.html">Gallery</a><a href="order.html">Order Online</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero" style="margin-top:var(--nav-h)">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1920&q=80')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="section-label" style="justify-content:center">Explore</div>
+    <h1 class="section-title">Our <span>Menu</span></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Menu</span></div>
+  </div>
+</div>
+
+<!-- Menu Controls (Sticky) -->
+<div class="menu-controls">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <div class="menu-search-wrap">
+        <input type="text" class="menu-search" id="menuSearch" placeholder="Search dishes, ingredients...">
+        <i class="fas fa-search menu-search-icon"></i>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;font-size:0.82rem;color:var(--gray)">
+        <span id="itemCount">24 items</span>
+        <select id="sortBy" style="background:var(--black-card);border:1px solid var(--glass-border);color:var(--white);padding:8px 14px;border-radius:8px;font-size:0.8rem;cursor:pointer">
+          <option value="default">Sort by: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="calories">Calories</option>
+        </select>
+      </div>
+    </div>
+    <div class="menu-filters" id="menuFilters">
+      <button class="filter-btn active" data-filter="all">🍽️ All Items</button>
+      <button class="filter-btn" data-filter="starters">🥗 Starters</button>
+      <button class="filter-btn" data-filter="bbq">🔥 BBQ</button>
+      <button class="filter-btn" data-filter="pakistani">🌿 Pakistani</button>
+      <button class="filter-btn" data-filter="chinese">🥢 Chinese</button>
+      <button class="filter-btn" data-filter="italian">🍝 Italian</button>
+      <button class="filter-btn" data-filter="fastfood">🍔 Fast Food</button>
+      <button class="filter-btn" data-filter="desserts">🍰 Desserts</button>
+      <button class="filter-btn" data-filter="drinks">🥤 Drinks</button>
+      <button class="filter-btn" data-filter="veg">🌿 Veg Only</button>
+    </div>
+  </div>
+</div>
+
+<!-- Menu Grid -->
+<section class="section" style="padding-top:40px">
+  <div class="container">
+    <div class="menu-grid" id="menuGrid">
+      <!-- Populated by JS -->
+      <div style="grid-column:1/-1;text-align:center;padding:80px 20px">
+        <div class="shimmer" style="width:200px;height:32px;border-radius:8px;margin:0 auto 20px"></div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+          <div class="shimmer" style="height:320px;border-radius:20px"></div>
+          <div class="shimmer" style="height:320px;border-radius:20px"></div>
+          <div class="shimmer" style="height:320px;border-radius:20px"></div>
+        </div>
+      </div>
+    </div>
+    <div id="noResults" style="display:none;text-align:center;padding:80px 20px">
+      <div style="font-size:4rem;margin-bottom:16px">🔍</div>
+      <h3 style="margin-bottom:8px">No dishes found</h3>
+      <p>Try a different search term or ask Hana AI for suggestions!</p>
+      <button onclick="window.HananAI?.openAI()" class="btn btn-gold" style="margin-top:20px">Ask Hana AI</button>
+    </div>
+  </div>
+</section>
+
+<!-- Chef Recommendations Banner -->
+<section class="section-sm" style="background:var(--black-soft)">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div>
+        <div class="section-label" style="justify-content:flex-start"><span></span>Chef's Corner</div>
+        <h3 style="margin-top:4px">Can't decide? <span style="color:var(--gold)">Ask Hana AI</span> for personalized recommendations!</h3>
+      </div>
+      <button onclick="window.HananAI?.openAI()" class="btn btn-gold btn-lg">
+        <i class="fas fa-robot"></i> Get AI Recommendations
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Cart Sidebar -->
+<div id="cartOverlay" class="cart-overlay"></div>
+<div id="cartSidebar" class="cart-sidebar">
+  <div class="cart-header"><h3>🛒 Your Cart</h3><button class="cart-close">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer"><div id="cartTotals"></div><a href="order.html" class="btn btn-gold cart-checkout-btn">Proceed to Checkout</a></div>
+</div>
+
+<a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Footer (compact) -->
+<footer style="background:var(--black-soft);border-top:1px solid var(--glass-border);padding:30px 0">
+  <div class="container" style="text-align:center">
+    <p style="color:var(--gray);font-size:0.82rem">© 2024 <span style="color:var(--gold)">Hanan Fusion</span>. All rights reserved. &nbsp;|&nbsp; <a href="index.html" style="color:var(--gold)">Home</a> · <a href="reservation.html" style="color:var(--gold)">Reserve</a> · <a href="contact.html" style="color:var(--gold)">Contact</a></p>
+  </div>
+</footer>
+
+<div id="lightbox" class="lightbox"><button class="lightbox-close">✕</button><img src="" alt=""></div>
+
+<!-- Supabase SDK — must load before main.js -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/main.js"></script>
+<script src="js/ai-widget.js"></script>
+<script>
+// Extended filter logic for veg-only
+document.addEventListener('DOMContentLoaded', () => {
+  const sortSel = document.getElementById('sortBy');
+  let activeFilter = 'all';
+  let searchQuery = '';
+
+  function applyFilters() {
+    let items = [...window.menuData];
+    // Filter
+    if (activeFilter === 'veg') items = items.filter(i => i.veg);
+    else if (activeFilter !== 'all') items = items.filter(i => i.category === activeFilter);
+    // Search
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      items = items.filter(i => i.name.toLowerCase().includes(q) || i.description.toLowerCase().includes(q) || i.category.includes(q) || (i.tags||[]).some(t=>t.includes(q)));
+    }
+    // Sort
+    const sort = sortSel.value;
+    if (sort === 'price-asc') items.sort((a,b) => a.price - b.price);
+    else if (sort === 'price-desc') items.sort((a,b) => b.price - a.price);
+    else if (sort === 'calories') items.sort((a,b) => a.calories - b.calories);
+
+    document.getElementById('itemCount').textContent = `${items.length} item${items.length !== 1 ? 's' : ''}`;
+    renderMenuItems(items);
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  document.querySelector('.menu-search')?.addEventListener('input', e => {
+    searchQuery = e.target.value;
+    applyFilters();
+  });
+
+  sortSel?.addEventListener('change', applyFilters);
+
+  // Override renderMenuItems to track AI personalization
+  const orig = window.renderMenuItems;
+  window.renderMenuItems = function(items) {
+    orig(items);
+    // Track for AI personalization
+    document.querySelectorAll('.menu-item-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const cat = card.dataset.category;
+        if (cat) window.HananAI?.AIPersonalization?.trackDishView(card.dataset.id, cat);
+      });
+    });
+  };
+
+  applyFilters();
+});
+</script>
+</body>
+</html>
