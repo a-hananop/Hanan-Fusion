@@ -466,17 +466,38 @@ window.fetchMenuData = async function() {
   try {
     const { data, error } = await window.supabaseClient.from('menu_items').select('*').order('name');
     if (error) throw error;
-    if (data) {
-      window.menuData = data;
+    
+    if (!data || data.length === 0) {
+      console.warn("Supabase returned 0 items. Check if your 'menu_items' table has rows.");
       if (document.getElementById('menuGrid')) {
-        renderMenuItems(window.menuData);
+        document.getElementById('menuGrid').innerHTML = `
+          <div style="text-align:center;padding:40px;grid-column:1/-1">
+            <div style="font-size:3rem;margin-bottom:15px">⚠️</div>
+            <h3>Connected, but no items found</h3>
+            <p style="margin-top:8px">Your Supabase table 'menu_items' is currently empty.</p>
+            <a href="admin/index.html" class="btn btn-gold btn-sm" style="margin-top:15px">Add Items in Admin Panel</a>
+          </div>`;
       }
-      if (document.getElementById('adminMenuGrid')) {
-        renderAdminMenu();
-      }
+      return;
+    }
+
+    window.menuData = data;
+    if (document.getElementById('menuGrid')) {
+      renderMenuItems(window.menuData);
+    }
+    if (document.getElementById('adminMenuGrid')) {
+      renderAdminMenu();
     }
   } catch (err) {
     console.error('Failed to fetch menu', err);
+    if (document.getElementById('menuGrid')) {
+      document.getElementById('menuGrid').innerHTML = `
+        <div style="text-align:center;padding:40px;grid-column:1/-1">
+          <div style="font-size:3rem;margin-bottom:15px">❌</div>
+          <h3>Connection Error</h3>
+          <p style="margin-top:8px;color:#e74c3c">${err.message || 'Check your Vercel Environment Variables'}</p>
+        </div>`;
+    }
   }
 };
 
