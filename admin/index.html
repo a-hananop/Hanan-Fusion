@@ -136,8 +136,12 @@
       window.supabaseClient = _sb;
 
       const { data: { session } } = await _sb.auth.getSession();
+      
       if (!session) {
-        window.location.replace('login.html');
+        // Not logged in -> Go to login
+        // We use a relative-to-root path to avoid 404s
+        const path = window.location.pathname.includes('/admin/') ? 'login.html' : 'admin/login.html';
+        window.location.replace(path);
       } else {
         // Authenticated! Show the layout
         document.addEventListener('DOMContentLoaded', () => {
@@ -151,6 +155,10 @@
       }
     })();
   </script>
+  <style>
+    /* Prevents white flash before Auth Guard kicks in */
+    html { background: #000; }
+  </style>
 </head>
 
 <body>
